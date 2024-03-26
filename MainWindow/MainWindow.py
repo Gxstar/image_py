@@ -27,10 +27,10 @@ class MyWindow(QMainWindow):
             ui.exifList.clear()
             ui.exifList.addItem("厂商："+tags.Make)
             ui.exifList.addItem("型号："+tags.Model)
-            ui.exifList.addItem("镜头："+tags.lens_model)
+            ui.exifList.addItem("镜头："+tags.get("lens_model"))
             ui.exifList.addItem("焦距："+str(tags.focal_length)+"mm")
             ui.exifList.addItem("35mm焦距："+str(tags.focal_length_in_35mm_film)+"mm")
-            ui.exifList.addItem("闪光灯："+str(tags.flash))
+            ui.exifList.addItem("闪光灯："+str(tags.flash.flash_fired))
 
 
         # 信号处理
